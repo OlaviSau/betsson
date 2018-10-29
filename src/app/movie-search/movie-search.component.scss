@@ -1,0 +1,22 @@
+bg-movie-search {
+  margin: 75px 0;
+  display: block;
+  .genre {
+    height: 30px;
+    width: 100px;
+    border-color: gainsboro;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .search {
+    height: 26px;
+    width: 400px;
+    border-color: gainsboro;
+    border-width: 1px;
+    border-style: solid;
+    border-left: none;
+    padding-left: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}

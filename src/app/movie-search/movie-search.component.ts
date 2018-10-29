@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Genre} from '../models/genre';
 
 @Component({
   selector: 'bg-movie-search',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieSearchComponent implements OnInit {
 
-  constructor() { }
+  genres = [
+      {value: Genre.action, label: 'Action'},
+      {value: Genre.scifi, label: 'Sci-fi'},
+  ];
+  constructor() {}
 
   ngOnInit() {
   }
