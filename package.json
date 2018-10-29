@@ -21,7 +21,9 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@ngrx/store": "^6.1.0",
+    "angular-star-rating": "^4.0.0-beta.3",
     "core-js": "^2.5.4",
+    "css-star-rating": "^1.2.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

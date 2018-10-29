@@ -10,7 +10,7 @@ const initialState: Movie[] = [
         name: 'Deadpool',
         description: 'A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.',
         genres: [Genre.action, Genre.adventure, Genre.comedy],
-        rate: '8.6',
+        rate: 8.6,
         length: '1hr 48mins',
         img: 'deadpool.jpg'
     },
@@ -20,7 +20,7 @@ const initialState: Movie[] = [
         name: 'We\'re the Millers',
         description: 'A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico.',
         genres: [Genre.adventure, Genre.comedy, Genre.crime],
-        rate: '7.0',
+        rate: 7.0,
         length: '1hr 50mins',
         img: 'we-are-the-millers.jpg'
     },
@@ -30,7 +30,7 @@ const initialState: Movie[] = [
         name: 'Straight Outta Compton',
         description: 'The group NWA emerges from the mean streets of Compton in Los Angeles, California, in the mid-1980s and revolutionizes Hip Hop culture with their music and tales about life in the hood.',
         genres: [Genre.biography, Genre.drama, Genre.history],
-        rate: '8.0',
+        rate: 8.0,
         length: '2hr 27mins',
         img: 'straight-outta-compton.jpg'
     },
@@ -40,7 +40,7 @@ const initialState: Movie[] = [
         name: 'Gridiron Gang',
         description: 'Teenagers at a juvenile detention center, under the leadership of their counselor, gain self-esteem by playing football together.',
         genres: [Genre.crime, Genre.drama, Genre.sport],
-        rate: '6.9',
+        rate: 6.9,
         length: '2hr 5mins',
         img: 'gridiron-gang.jpg'
     },
@@ -50,7 +50,7 @@ const initialState: Movie[] = [
         name: 'American Gangster',
         description: 'In 1970s America, a detective works to bring down the drug empire of Frank Lucas, a heroin kingpin from Manhattan, who is smuggling the drug into the country from the Far East.',
         genres: [Genre.biography, Genre.crime, Genre.drama],
-        rate: '7.8',
+        rate: 7.8,
         length: '2hr 37mins',
         img: 'american-gangster.jpg'
     },
@@ -60,7 +60,7 @@ const initialState: Movie[] = [
         name: 'Gangster Squad',
         description: 'It\'s 1949 Los Angeles, the city is run by gangsters and a malicious mobster, Mickey Cohen. Determined to end the corruption, John O\'Mara assembles a team of cops, ready to take down the ruthless leader and restore peace to the city.',
         genres: [Genre.action, Genre.crime, Genre.drama],
-        rate: '6.8',
+        rate: 6.8,
         length: '1hr 53mins',
         img: 'gangster-squad.jpg'
     },
@@ -70,7 +70,7 @@ const initialState: Movie[] = [
         name: 'Now You See Me',
         description: 'An FBI agent and an Interpol detective track a team of illusionists who pull off bank heists during their performances and reward their audiences with the money.',
         genres: [Genre.crime, Genre.mystery, Genre.thriller],
-        rate: '7.3',
+        rate: 7.3,
         length: '1hr 55mins',
         img: 'now-you-see-me.jpg'
     },
@@ -80,7 +80,7 @@ const initialState: Movie[] = [
         name: 'Jurassic World',
         description: 'A new theme park is built on the original site of Jurassic Park. Everything is going well until the park\'s newest attraction--a genetically modified giant stealth killing machine--escapes containment and goes on a killing spree.',
         genres: [Genre.action, Genre.adventure, Genre.scifi],
-        rate: '7.1',
+        rate: 7.1,
         length: '2hr 4mins',
         img: 'jurassic-world.jpg'
     },
@@ -90,7 +90,7 @@ const initialState: Movie[] = [
         name: 'Mission: Impossible: Rogue Nation',
         description: 'Ethan and team take on their most impossible mission yet, eradicating the Syndicate - an International rogue organization as highly skilled as they are, committed to destroying the IMF.',
         genres: [Genre.action, Genre.adventure, Genre.thriller],
-        rate: '7.5',
+        rate: 7.5,
         length: '2hr 11mins',
         img: 'mission-impossible-rogue-nation.jpg'
     },
@@ -100,7 +100,7 @@ const initialState: Movie[] = [
         name: 'The Man from U.N.C.L.E.',
         description: 'In the early 1960s, CIA agent Napoleon Solo and KGB operative Illya Kuryakin participate in a joint mission against a mysterious criminal organization, which is working to proliferate nuclear weapons.',
         genres: [Genre.action, Genre.adventure, Genre.thriller],
-        rate: '7.3',
+        rate: 7.3,
         length: '1hr 56mins',
         img: 'the-man-from-uncle.jpg'
     },
@@ -110,7 +110,7 @@ const initialState: Movie[] = [
         name: 'Spectre',
         description: 'A cryptic message from Bond\'s past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.',
         genres: [Genre.action, Genre.adventure, Genre.thriller],
-        rate: '6.9',
+        rate: 6.9,
         length: '2hr 28mins',
         img: 'spectre.jpg'
     },
@@ -120,7 +120,7 @@ const initialState: Movie[] = [
         name: 'Legend',
         description: 'The film tells the story of the identical twin gangsters Reggie and Ronnie Kray, two of the most notorious criminals in British history, and their organised crime empire in the East End of London during the 1960s.',
         genres: [Genre.biography, Genre.crime, Genre.drama],
-        rate: '7.0',
+        rate: 7.0,
         length: '2hr 28mins',
         img: 'legend.jpg'
     },
@@ -130,7 +130,7 @@ const initialState: Movie[] = [
         name: 'Southpaw',
         description: 'Boxer Billy Hope turns to trainer Tick Wills to help him get his life back on track after losing his wife in a tragic accident and his daughter to child protection services.',
         genres: [Genre.action, Genre.drama, Genre.sport],
-        rate: '7.5',
+        rate: 7.5,
         length: '2hr 4mins',
         img: 'southpaw.jpg'
     },
@@ -140,7 +140,7 @@ const initialState: Movie[] = [
         name: 'Bridge of Spies',
         description: 'During the Cold War, an American lawyer is recruited to defend an arrested Soviet spy in court, and then help the CIA facilitate an exchange of the spy for the Soviet captured American U2 spy plane pilot, Francis Gary Powers.',
         genres: [Genre.biography, Genre.drama, Genre.thriller],
-        rate: '7.7',
+        rate: 7.7,
         length: '2hr 22mins',
         img: 'bridge-of-spies.jpg'
     },
@@ -150,7 +150,7 @@ const initialState: Movie[] = [
         name: 'Ant-Man',
         description: 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world.',
         genres: [Genre.action, Genre.adventure, Genre.scifi],
-        rate: '7.4',
+        rate: 7.4,
         length: '1hr 57mins',
         img: 'ant-man.jpg'
     },
@@ -160,7 +160,7 @@ const initialState: Movie[] = [
         name: 'Fast & Furious 7',
         description: 'Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.',
         genres: [Genre.action, Genre.crime, Genre.thriller],
-        rate: '7.3',
+        rate: 7.3,
         length: '2hr 17mins',
         img: 'fast-and-furious-7.jpg'
     },
@@ -170,7 +170,7 @@ const initialState: Movie[] = [
         name: 'Tracers',
         description: 'Wanted by the Chinese mafia, a New York City bike messenger escapes into the world of parkour after meeting a beautiful stranger.',
         genres: [Genre.action, Genre.crime, Genre.drama],
-        rate: '5.6',
+        rate: 5.6,
         length: '1hr 34mins',
         img: 'tracers.jpg'
     },
@@ -180,7 +180,7 @@ const initialState: Movie[] = [
         name: 'Running Scared',
         description: 'A low-ranking thug is entrusted by his crime boss to dispose of a gun that killed corrupt cops, but things get out of control when the gun ends up in wrong hands.',
         genres: [Genre.action, Genre.crime, Genre.drama],
-        rate: '7.4',
+        rate: 7.4,
         length: '2hr 2mins',
         img: 'running-scared.jpg'
     },
@@ -190,7 +190,7 @@ const initialState: Movie[] = [
         name: 'The Hangover',
         description: 'Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.',
         genres: [Genre.comedy],
-        rate: '7.8',
+        rate: 7.8,
         length: '1hr 40mins',
         img: 'the-hangover.jpg'
     },
@@ -200,7 +200,7 @@ const initialState: Movie[] = [
         name: 'Project X',
         description: '3 high school seniors throw a birthday party to make a name for themselves. As the night progresses, things spiral out of control as word of the party spreads.',
         genres: [Genre.comedy, Genre.crime],
-        rate: '6.7',
+        rate: 6.7,
         length: '1hr 28mins',
         img: 'project-x.jpg'
     },
@@ -210,7 +210,7 @@ const initialState: Movie[] = [
         name: 'The Dark Knight',
         description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.',
         genres: [Genre.action, Genre.crime, Genre.drama],
-        rate: '9.0',
+        rate: 9.0,
         length: '2hr 32mins',
         img: 'the-dark-knight.jpg'
     },
@@ -220,7 +220,7 @@ const initialState: Movie[] = [
         name: 'The Tournament',
         description: 'Every seven years in an unsuspecting town, The Tournament takes place. A battle royale between 30 of the world\'s deadliest assassins. The last man standing receiving the $10,000,000 cash prize and the title of Worlds No 1, which itself carries the legendary million dollar a bullet price tag.',
         genres: [Genre.action, Genre.thriller],
-        rate: '6.1',
+        rate: 6.1,
         length: '1hr 35mins',
         img: 'the-tournament.jpg'
     },
@@ -230,7 +230,7 @@ const initialState: Movie[] = [
         name: 'The Matrix',
         description: 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.',
         genres: [Genre.action, Genre.scifi],
-        rate: '8.7',
+        rate: 8.7,
         length: '2hr 16mins',
         img: 'the-matrix.jpg'
     },
@@ -240,7 +240,7 @@ const initialState: Movie[] = [
         name: 'Bad Boys',
         description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
         genres: [Genre.action, Genre.comedy, Genre.crime],
-        rate: '6.8',
+        rate: 6.8,
         length: '1hr 59mins',
         img: 'bad-boys.jpg'
     }

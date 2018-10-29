@@ -8,7 +8,7 @@ export interface Movie {
     name: string;
     description: string;
     genres: Genre[];
-    rate: string;
+    rate: number;
     length: string;
     img: string;
 }

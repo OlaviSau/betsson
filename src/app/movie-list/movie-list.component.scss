@@ -1,12 +1,17 @@
 bg-movie-list {
   .movie {
     max-width: 1200px;
-    height: 120px;
+    height: 162px;
     margin: 0 auto;
     border: 1px solid black;
+    position: relative;
+
+    &:not(:last-child) {
+      border-bottom: none;
+    }
 
     .movie-image {
-      height: 120px;
+      height: 162px;
       float: left;
     }
     .movie-title {
@@ -17,6 +22,17 @@ bg-movie-list {
       text-align: left;
       display: block;
     }
+    .movie-description {
+      position: relative;
+      left: 15px;
+      text-align: left;
+      max-width: 1000px;
+    }
+    .movie-rating {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+    }
   }
-
 }

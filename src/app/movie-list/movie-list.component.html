@@ -1,5 +1,8 @@
 <div class="movie" *ngFor="let movie of movies | async">
   <img class="movie-image" src="assets/images/movie-covers/{{movie.img}}" alt="{{movie.name}} poster">
   <div class="movie-title">{{movie.name}}</div>
-  <p>{{movie.description}}</p>
+  <p class="movie-description">{{movie.description}}</p>
+  <div class="movie-rating">
+    <star-rating [starType]="'svg'" [rating]="movie.rate / 2" [showHalfStars]="true" [disabled]="true"></star-rating>
+  </div>
 </div>
