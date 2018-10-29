@@ -16,12 +16,12 @@ interface MovieKeyRoute {
 export class MovieDetailComponent implements OnInit, OnDestroy {
 
   movie: Movie;
-  private routeSubscriber: any;
+  private routeSubscription: any;
 
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.routeSubscriber = this.route.params.subscribe(params => {
+    this.routeSubscription = this.route.params.subscribe(params => {
         this.store.select('movie').subscribe(
             movies => this.movie = movies.find(movie => movie.key === params['key'])
         );
@@ -29,7 +29,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.routeSubscriber.unsubscribe();
+    this.routeSubscription.unsubscribe();
   }
 
 }
