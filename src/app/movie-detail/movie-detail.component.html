@@ -1,3 +1,11 @@
-<p>
-  movie-detail works!
-</p>
+<div class="back-to-list">
+  <div routerLink="/"><img src="assets/images/back-icon.svg" alt="back-icon" class="back-icon">Back to Movie List</div>
+</div>
+<div class="movie">
+  <img class="movie-image" src="assets/images/movie-covers/{{movie.img}}" alt="{{movie.name}} poster">
+  <div class="movie-title">{{movie.name}}</div>
+  <p class="movie-description">{{movie.description}}</p>
+</div>
+<div class="movie-rating">
+  <star-rating [starType]="'svg'" [rating]="movie.rate / 2" [showHalfStars]="true" [disabled]="true"></star-rating>
+</div>

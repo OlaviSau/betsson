@@ -1,0 +1,41 @@
+bg-movie-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  .movie {
+    position: relative;
+    height: 268px;
+
+
+    .movie-image {
+      float: left;
+    }
+    .movie-title {
+      font-size: 25px;
+      position: relative;
+      top: 15px;
+      left: 15px;
+      text-align: left;
+      display: block;
+    }
+    .movie-description {
+      position: relative;
+      left: 15px;
+      text-align: left;
+      max-width: 80%;
+    }
+  }
+
+  .back-to-list {
+    margin: 15px;
+
+    .back-icon {
+      height: 12px;
+      margin-right: 5px;
+    }
+  }
+
+  .movie-rating {
+    border-bottom: 1px solid gainsboro;
+  }
+}
