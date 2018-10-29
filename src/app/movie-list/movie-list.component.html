@@ -1,5 +1,5 @@
 <bg-movie-search></bg-movie-search>
-<div class="movie" *ngFor="let movie of movies | async">
+<div class="movie" *ngFor="let movie of movies | async" routerLink="/{{movie.key}}">
   <img class="movie-image" src="assets/images/movie-covers/{{movie.img}}" alt="{{movie.name}} poster">
   <div class="movie-title">{{movie.name}}</div>
   <p class="movie-description">{{movie.description}}</p>
