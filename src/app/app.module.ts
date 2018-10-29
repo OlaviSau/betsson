@@ -10,6 +10,7 @@ import { movieReducer } from './reducers/movieReducer';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {StarRatingModule} from 'angular-star-rating';
 import {searchReducer} from './reducers/searchReducer';
+import {genreReducer} from './reducers/genreReducer';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {searchReducer} from './reducers/searchReducer';
     StarRatingModule.forRoot(),
     StoreModule.forRoot({
         movie: movieReducer,
-        search: searchReducer
+        search: searchReducer,
+        genre: genreReducer
     }),
   ],
   providers: [],

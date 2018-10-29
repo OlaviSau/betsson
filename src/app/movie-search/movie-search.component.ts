@@ -3,6 +3,7 @@ import {Genre} from '../models/genre';
 import {AppState} from '../app.state';
 import {Store} from '@ngrx/store';
 import {Search} from '../actions/search';
+import {GenrePicked} from '../actions/genre-picked';
 
 @Component({
   selector: 'bg-movie-search',
@@ -32,6 +33,10 @@ export class MovieSearchComponent implements OnInit {
 
   onSearch($event) {
       this.store.dispatch(new Search($event.target.value));
+  }
+
+  onGenrePicked($event) {
+      this.store.dispatch(new GenrePicked($event.target.value));
   }
 
 }
