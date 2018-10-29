@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Genre} from '../models/genre';
+import {AppState} from '../app.state';
+import {Store} from '@ngrx/store';
+import {Search} from '../actions/search';
 
 @Component({
   selector: 'bg-movie-search',
@@ -22,9 +25,13 @@ export class MovieSearchComponent implements OnInit {
       {value: Genre.sport, label: 'Sport'},
       {value: Genre.thriller, label: 'Thriller'},
   ];
-  constructor() {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
+  }
+
+  onSearch($event) {
+      this.store.dispatch(new Search($event.target.value));
   }
 
 }

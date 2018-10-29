@@ -1,6 +1,7 @@
 import {Genre} from '../models/genre';
 import { Action } from '@ngrx/store';
 import {Movie} from '../models/movie';
+import {SEARCH} from '../actions/search';
 
 /* tslint:disable:max-line-length */
 const initialState: Movie[] = [

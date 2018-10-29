@@ -1,5 +1,5 @@
 <select class="genre" title="genre">
   <option *ngFor="let genre of genres" value="{{genre.value}}">{{genre.label}}</option>
 </select>
-<input class="search" title="search" placeholder="Search by name or description">
+<input class="search" title="search" (keyup)="onSearch($event)" placeholder="Search by name or description">
 

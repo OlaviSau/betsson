@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { movieReducer } from './reducers/movieReducer';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {StarRatingModule} from 'angular-star-rating';
+import {searchReducer} from './reducers/searchReducer';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {StarRatingModule} from 'angular-star-rating';
     AppRoutingModule,
     StarRatingModule.forRoot(),
     StoreModule.forRoot({
-        movie: movieReducer
+        movie: movieReducer,
+        search: searchReducer
     }),
   ],
   providers: [],
