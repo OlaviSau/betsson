@@ -1,3 +1,8 @@
+## Setup
+1. Install NodeJs ( 8.x or 10.x )
+2. Install angular-cli ( npm install -g angular-cli@latest )
+3. npm install in project directory
+
 # Betsson
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
