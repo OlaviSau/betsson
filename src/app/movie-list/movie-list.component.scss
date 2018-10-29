@@ -3,7 +3,7 @@ bg-movie-list {
     max-width: 1200px;
     height: 162px;
     margin: 0 auto;
-    border: 1px solid black;
+    border-bottom: 1px solid gainsboro;
     position: relative;
 
     &:hover {
@@ -11,7 +11,7 @@ bg-movie-list {
       cursor: pointer;
     }
 
-    &:not(:last-child) {
+    &:last-child {
       border-bottom: none;
     }
 
@@ -41,6 +41,48 @@ bg-movie-list {
 
       svg:active {
         outline: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  bg-movie-list .movie {
+    .movie-description {
+      max-width: calc(100% - 50px);
+    }
+    .movie-rating {
+      top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  bg-movie-list {
+    display: block;
+    top: 40px;
+    position: absolute;
+    overflow-x: hidden;
+
+    .movie {
+      height: auto;
+      margin-bottom: 10px;
+
+      .movie-title {
+        margin-top: 10px;
+      }
+
+      .movie-image {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        height: auto;
+      }
+
+      .movie-rating {
+        top: 270px;
+        right: calc(50% - 55px);
       }
     }
   }

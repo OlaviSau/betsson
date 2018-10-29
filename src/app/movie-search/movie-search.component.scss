@@ -21,3 +21,28 @@ bg-movie-search {
     border-bottom-right-radius: 5px;
   }
 }
+@media screen and (max-width: 600px) {
+
+  bg-movie-search {
+    margin: 0 0 0 0;
+    position: fixed;
+    width: auto;
+    display: flex;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    .genre {
+      border-radius: 0;
+      border-left: none;
+      padding-left: 5px;
+      float: left;
+    }
+    .search {
+      border-right: none;
+      border-radius: 0;
+      float: right;
+    }
+  }
+}

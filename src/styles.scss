@@ -9,3 +9,9 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 *:focus {outline:0;}
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+}
