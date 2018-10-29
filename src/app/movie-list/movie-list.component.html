@@ -1,3 +1,5 @@
-<p>
-  movie-list works!
-</p>
+<div class="movie" *ngFor="let movie of movies | async">
+  <img class="movie-image" src="assets/images/movie-covers/{{movie.img}}" alt="{{movie.name}} poster">
+  <div class="movie-title">{{movie.name}}</div>
+  <p>{{movie.description}}</p>
+</div>
