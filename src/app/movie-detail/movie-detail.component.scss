@@ -10,6 +10,7 @@ bg-movie-detail {
     .movie-image {
       float: left;
     }
+
     .movie-title {
       font-size: 25px;
       position: relative;
@@ -37,5 +38,33 @@ bg-movie-detail {
 
   .movie-rating {
     border-bottom: 1px solid gainsboro;
+  }
+}
+@media screen and (max-width: 600px) {
+  bg-movie-detail {
+    display: block;
+    position: absolute;
+    overflow-x: hidden;
+
+    .movie {
+      height: auto;
+      margin-bottom: 10px;
+
+      .movie-title {
+        margin-top: 10px;
+      }
+
+      .movie-image {
+        display: block;
+        margin: 0 auto;
+        float: none;
+        height: auto;
+      }
+
+      .movie-rating {
+        top: 270px;
+        right: calc(50% - 55px);
+      }
+    }
   }
 }
