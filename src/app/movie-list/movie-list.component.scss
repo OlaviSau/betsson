@@ -6,6 +6,11 @@ bg-movie-list {
     border: 1px solid black;
     position: relative;
 
+    &:hover {
+      background: whitesmoke;
+      cursor: pointer;
+    }
+
     &:not(:last-child) {
       border-bottom: none;
     }
@@ -26,13 +31,17 @@ bg-movie-list {
       position: relative;
       left: 15px;
       text-align: left;
-      max-width: 1000px;
+      max-width: 80%;
     }
     .movie-rating {
       display: inline-block;
       position: absolute;
       top: 50%;
       right: 15px;
+
+      svg:active {
+        outline: none;
+      }
     }
   }
 }
