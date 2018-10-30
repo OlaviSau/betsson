@@ -7,7 +7,7 @@ import {StarRatingModule} from 'angular-star-rating';
 import {AppRoutingModule} from '../app-routing.module';
 import {MovieDetailComponent} from '../movie-detail/movie-detail.component';
 import {APP_BASE_HREF} from '@angular/common';
-import {movieReducer, searchReducer, genreReducer} from '../reducers';
+import {moviesReducer, searchReducer, genreReducer} from '../reducers';
 import {Genre} from '../models/genre';
 
 describe('MovieListComponent', () => {
@@ -20,13 +20,13 @@ describe('MovieListComponent', () => {
         AppRoutingModule,
         StarRatingModule.forRoot(),
         StoreModule.forRoot({
-          movie: movieReducer,
+          movies: moviesReducer,
           search: searchReducer,
           genre: genreReducer
         },
           {
             initialState: {
-              movie: [{
+              movies: [{
                 id: 23,
                 key: 'bad-boys',
                 name: 'Bad Boys',

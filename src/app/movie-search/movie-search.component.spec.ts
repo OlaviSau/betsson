@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MovieSearchComponent } from './movie-search.component';
 import {Store, StoreModule} from '@ngrx/store';
 import {AppState} from '../app.state';
-import {movieReducer, searchReducer, genreReducer} from '../reducers';
+import {moviesReducer, searchReducer, genreReducer} from '../reducers';
 
 describe('MovieSearchComponent', () => {
   let component: MovieSearchComponent;
@@ -14,7 +14,7 @@ describe('MovieSearchComponent', () => {
     TestBed.configureTestingModule({
       imports: [
           StoreModule.forRoot({
-            movie: movieReducer,
+            movies: moviesReducer,
             search: searchReducer,
             genre: genreReducer
           })

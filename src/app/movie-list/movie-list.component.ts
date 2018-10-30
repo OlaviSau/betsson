@@ -20,7 +20,7 @@ export class MovieListComponent {
 
   constructor(private store: Store<AppState>) {
       this.movies = combineLatest(
-          store.select('movie'),
+          store.select('movies'),
           store.select('search'),
           store.select('genre')
       ).pipe(

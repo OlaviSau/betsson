@@ -1,3 +1,3 @@
 export { genreReducer } from './genreReducer';
-export { movieReducer } from './movieReducer';
+export { moviesReducer } from './moviesReducer';
 export { searchReducer } from './searchReducer';

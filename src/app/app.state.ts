@@ -1,7 +1,7 @@
 import {Movie} from './models/movie';
 
 export interface AppState {
-    readonly movie: Movie[];
-    readonly genre: '';
-    readonly search: '';
+    readonly movies: Movie[];
+    readonly genre: string;
+    readonly search: string;
 }

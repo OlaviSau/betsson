@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovieDetailComponent } from './movie-detail.component';
 import {StoreModule} from '@ngrx/store';
-import {genreReducer, movieReducer, searchReducer} from '../reducers';
+import {genreReducer, moviesReducer, searchReducer} from '../reducers';
 import {AppRoutingModule} from '../app-routing.module';
 import {StarRatingModule} from 'angular-star-rating';
 import {MovieListComponent} from '../movie-list/movie-list.component';
@@ -22,12 +22,12 @@ describe('MovieDetailComponent', () => {
         AppRoutingModule,
         StarRatingModule.forRoot(),
         StoreModule.forRoot({
-          movie: movieReducer,
+          movies: moviesReducer,
           search: searchReducer,
           genre: genreReducer
         }, {
           initialState: {
-            movie: [{
+            movies: [{
               id: 23,
               key: 'bad-boys',
               name: 'Bad Boys',

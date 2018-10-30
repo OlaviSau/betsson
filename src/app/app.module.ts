@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { StoreModule } from '@ngrx/store';
-import {genreReducer, movieReducer, searchReducer} from './reducers';
+import {genreReducer, moviesReducer, searchReducer} from './reducers';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {StarRatingModule} from 'angular-star-rating';
 
@@ -23,7 +23,7 @@ import {StarRatingModule} from 'angular-star-rating';
     AppRoutingModule,
     StarRatingModule.forRoot(),
     StoreModule.forRoot({
-        movie: movieReducer,
+        movies: moviesReducer,
         search: searchReducer,
         genre: genreReducer
     }),

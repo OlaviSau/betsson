@@ -18,7 +18,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.routeSubscription = this.route.params.subscribe((params: { key: string }) =>
-        this.store.select('movie').subscribe(
+        this.store.select('movies').subscribe(
             movies => this.movie = movies.find(movie => movie.key === params.key)
         )
     );

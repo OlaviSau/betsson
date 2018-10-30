@@ -248,7 +248,7 @@ const initialState: Movie[] = [
 /* tslint:enable:max-line-length */
 
 
-export function movieReducer(state: Movie[] = initialState, action: Action) {
+export function moviesReducer(state: Movie[] = initialState, action: Action) {
     switch (action.type) {
         default:
             return state;
