@@ -1,18 +1,42 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MovieListComponent } from './movie-list.component';
+import {MovieListComponent} from './movie-list.component';
 import {Action, Store, StoreModule} from '@ngrx/store';
 import {MovieSearchComponent} from '../movie-search/movie-search.component';
 import {StarRatingModule} from 'angular-star-rating';
 import {AppRoutingModule} from '../app-routing.module';
 import {MovieDetailComponent} from '../movie-detail/movie-detail.component';
 import {APP_BASE_HREF} from '@angular/common';
-import {moviesReducer, searchReducer, genreReducer} from '../reducers';
+import {genreReducer, moviesReducer, searchReducer} from '../reducers';
 import {Genre} from '../models/genre';
 import {Movie} from '../models/movie';
 import {AppState} from '../app.state';
 import {Search} from '../actions/search';
+import {GenrePicked} from '../actions/genre-picked';
 
+/* tslint:disable:max-line-length */
+const BAD_BOYS_MOVIE = {
+  id: 23,
+  key: 'bad-boys',
+  name: 'Bad Boys',
+  description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
+  genres: [Genre.action, Genre.comedy, Genre.crime],
+  rate: 6.8,
+  length: '1hr 59mins',
+  img: 'bad-boys.jpg'
+};
+
+const DEADPOOL_MOVIE = {
+  id: 1,
+  key: 'deadpool',
+  name: 'Deadpool',
+  description: 'A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.',
+  genres: [Genre.action, Genre.adventure, Genre.comedy],
+  rate: 8.6,
+  length: '1hr 48mins',
+  img: 'deadpool.jpg'
+};
+/* tslint:enable:max-line-length */
 
 const SET_MOVIES = 'SET_MOVIES';
 
@@ -50,16 +74,7 @@ describe('MovieListComponent', () => {
         },
           {
             initialState: {
-              movies: [{
-                id: 23,
-                key: 'bad-boys',
-                name: 'Bad Boys',
-                description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
-                genres: [Genre.action, Genre.comedy, Genre.crime],
-                rate: 6.8,
-                length: '1hr 59mins',
-                img: 'bad-boys.jpg'
-              }],
+              movies: [BAD_BOYS_MOVIE],
               search: '',
               genre: 'all'
             }
@@ -85,29 +100,11 @@ describe('MovieListComponent', () => {
   it('should display one movie', () => {
     expect(document.querySelectorAll('.movie').length).toEqual(1);
   });
-  /* tslint:disable:max-line-length */
+
   it('should filter by search', () => {
     store.dispatch(new SetMovies([
-      {
-        id: 23,
-        key: 'bad-boys',
-        name: 'Bad Boys',
-        description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
-        genres: [Genre.action, Genre.comedy, Genre.crime],
-        rate: 6.8,
-        img: 'bad-boys.jpg',
-        length: '1hr 59mins',
-      },
-      {
-        id: 1,
-        key: 'deadpool',
-        name: 'Deadpool',
-        description: 'A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.',
-        genres: [Genre.action, Genre.adventure, Genre.comedy],
-        rate: 8.6,
-        length: '1hr 48mins',
-        img: 'deadpool.jpg'
-      }
+      BAD_BOYS_MOVIE,
+      DEADPOOL_MOVIE
     ]));
     fixture.detectChanges();
 
@@ -118,5 +115,20 @@ describe('MovieListComponent', () => {
 
     expect(document.querySelectorAll('.movie').length).toEqual(1);
   });
-  /* tslint:enable:max-line-length */
+
+  it('should filter by genre', () => {
+    store.dispatch(new SetMovies([
+      BAD_BOYS_MOVIE,
+      DEADPOOL_MOVIE
+    ]));
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.movie').length).toEqual(2);
+
+    store.dispatch(new GenrePicked(Genre.adventure));
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.movie').length).toEqual(1);
+  });
+
 });
