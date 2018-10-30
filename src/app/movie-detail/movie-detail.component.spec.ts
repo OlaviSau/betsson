@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovieDetailComponent } from './movie-detail.component';
-import {Store, StoreModule} from '@ngrx/store';
+import {StoreModule} from '@ngrx/store';
 import {genreReducer, movieReducer, searchReducer} from '../reducers';
 import {AppRoutingModule} from '../app-routing.module';
 import {StarRatingModule} from 'angular-star-rating';
@@ -9,7 +9,7 @@ import {MovieListComponent} from '../movie-list/movie-list.component';
 import {MovieSearchComponent} from '../movie-search/movie-search.component';
 import {APP_BASE_HREF} from '@angular/common';
 import {Genre} from '../models/genre';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
 
 describe('MovieDetailComponent', () => {
