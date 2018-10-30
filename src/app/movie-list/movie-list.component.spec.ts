@@ -181,4 +181,21 @@ describe('MovieListComponent', () => {
     expect(document.querySelectorAll('.movie').length).toEqual(2);
   });
 
+  it('should display movie title, image, description and rating', () => {
+    store.dispatch(new SetMovies([
+      BAD_BOYS_MOVIE
+    ]));
+
+    fixture.detectChanges();
+
+    const movie = document.querySelector('.movie');
+
+    // fragile test, but might catch issues from property name changes
+    expect(movie.querySelector('.movie-image').getAttribute('src')).toContain(BAD_BOYS_MOVIE.img);
+    expect(movie.querySelector('.movie-title').textContent).toEqual(BAD_BOYS_MOVIE.name);
+    expect(movie.querySelector('.movie-description').textContent).toEqual(BAD_BOYS_MOVIE.description);
+    expect(movie.querySelector('.movie-rating star-rating').getAttribute('ng-reflect-rating')).toEqual(String(BAD_BOYS_MOVIE.rate / 2));
+
+  });
+
 });
