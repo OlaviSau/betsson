@@ -5,11 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-import { StoreModule } from '@ngrx/store';
+import {ActionReducer, MetaReducer, StoreModule} from '@ngrx/store';
 import {genreReducer, moviesReducer, searchReducer} from './reducers';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {StarRatingModule} from 'angular-star-rating';
+import {localStorageSync} from 'ngrx-store-localstorage';
 
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({keys: ['search', 'genre'], rehydrate: true})(reducer);
+}
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
   declarations: [
@@ -26,7 +31,7 @@ import {StarRatingModule} from 'angular-star-rating';
         movies: moviesReducer,
         search: searchReducer,
         genre: genreReducer
-    }),
+    }, {metaReducers}),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,13 +4,14 @@ import {AppState} from '../app.state';
 import {Store} from '@ngrx/store';
 import {Search} from '../actions/search';
 import {GenrePicked} from '../actions/genre-picked';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'bg-movie-search',
   templateUrl: './movie-search.component.html',
   styleUrls: ['./movie-search.component.scss']
 })
-export class MovieSearchComponent implements OnInit {
+export class MovieSearchComponent {
 
   genres = [
       {value: 'all', label: 'All'},
@@ -26,9 +27,13 @@ export class MovieSearchComponent implements OnInit {
       {value: Genre.sport, label: 'Sport'},
       {value: Genre.thriller, label: 'Thriller'},
   ];
-  constructor(private store: Store<AppState>) {}
 
-  ngOnInit() {
+  search: Observable<string>;
+  selectedGenre: Observable<string>;
+
+  constructor(private store: Store<AppState>) {
+    this.search = store.select('search');
+    this.selectedGenre = store.select('genre');
   }
 
   onSearch($event) {
