@@ -19,7 +19,7 @@ const BAD_BOYS_MOVIE = {
   id: 23,
   key: 'bad-boys',
   name: 'Bad Boys',
-  description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
+  description: 'description #1',
   genres: [Genre.action, Genre.comedy, Genre.crime],
   rate: 6.8,
   length: '1hr 59mins',
@@ -30,11 +30,33 @@ const DEADPOOL_MOVIE = {
   id: 1,
   key: 'deadpool',
   name: 'Deadpool',
-  description: 'A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers, adopting the alter ego Deadpool.',
+  description: 'description #1',
   genres: [Genre.action, Genre.adventure, Genre.comedy],
   rate: 8.6,
   length: '1hr 48mins',
   img: 'deadpool.jpg'
+};
+
+const JURASSIC_WORLD_MOVIE = {
+  id: 8,
+  key: 'jurassic-world',
+  name: 'Jurassic World',
+  description: 'description #2',
+  genres: [Genre.action, Genre.adventure, Genre.scifi],
+  rate: 7.1,
+  length: '2hr 4mins',
+  img: 'jurassic-world.jpg'
+};
+
+const WE_ARE_THE_MILLERS_MOVIE = {
+  id: 2,
+  key: 'we-are-the-millers',
+  name: 'We\'re the Millers',
+  description: 'description #2',
+  genres: [Genre.adventure, Genre.comedy, Genre.crime],
+  rate: 7.0,
+  length: '1hr 50mins',
+  img: 'we-are-the-millers.jpg'
 };
 /* tslint:enable:max-line-length */
 
@@ -129,6 +151,37 @@ describe('MovieListComponent', () => {
     fixture.detectChanges();
 
     expect(document.querySelectorAll('.movie').length).toEqual(1);
+  });
+
+  it('should filter by genre and search', () => {
+    store.dispatch(new SetMovies([
+      BAD_BOYS_MOVIE,
+      DEADPOOL_MOVIE,
+      JURASSIC_WORLD_MOVIE,
+      WE_ARE_THE_MILLERS_MOVIE
+    ]));
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.movie').length).toEqual(4);
+
+    // two movies have Genre.crime, but only one of them has description #1
+    store.dispatch(new GenrePicked(Genre.crime));
+    store.dispatch(new Search('description #1'));
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.movie').length).toEqual(1);
+
+    // Reverse to verify
+    store.dispatch(new Search(''));
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.movie').length).toEqual(2);
+
+    store.dispatch(new GenrePicked('all'));
+    store.dispatch(new Search('description #1'));
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.movie').length).toEqual(2);
   });
 
 });
