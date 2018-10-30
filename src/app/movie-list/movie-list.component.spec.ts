@@ -93,14 +93,7 @@ describe('MovieListComponent', () => {
           movies: mutableMoviesReducer,
           search: searchReducer,
           genre: genreReducer
-        },
-          {
-            initialState: {
-              movies: [BAD_BOYS_MOVIE],
-              search: '',
-              genre: 'all'
-            }
-          })
+        })
       ],
       declarations: [ MovieListComponent, MovieSearchComponent, MovieDetailComponent],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }]
@@ -119,7 +112,11 @@ describe('MovieListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display one movie', () => {
+  it('should display correct number of movies', () => {
+    store.dispatch(new SetMovies([
+      BAD_BOYS_MOVIE
+    ]));
+    fixture.detectChanges();
     expect(document.querySelectorAll('.movie').length).toEqual(1);
   });
 
