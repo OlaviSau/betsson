@@ -4,10 +4,6 @@ import {Store} from '@ngrx/store';
 import {Movie} from '../models/movie';
 import {ActivatedRoute} from '@angular/router';
 
-interface MovieKeyRoute {
-  key: string;
-}
-
 @Component({
   selector: 'bg-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -21,11 +17,11 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.routeSubscription = this.route.params.subscribe(params => {
+    this.routeSubscription = this.route.params.subscribe((params: { key: string }) =>
         this.store.select('movie').subscribe(
-            movies => this.movie = movies.find(movie => movie.key === params['key'])
-        );
-    });
+            movies => this.movie = movies.find(movie => movie.key === params.key)
+        )
+    );
   }
 
   ngOnDestroy() {

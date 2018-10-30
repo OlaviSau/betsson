@@ -1,7 +1,6 @@
 import {Genre} from '../models/genre';
 import { Action } from '@ngrx/store';
 import {Movie} from '../models/movie';
-import {SEARCH} from '../actions/search';
 
 /* tslint:disable:max-line-length */
 const initialState: Movie[] = [
@@ -249,7 +248,7 @@ const initialState: Movie[] = [
 /* tslint:enable:max-line-length */
 
 
-export function movieReducer(state: Movie[] = initialState, action: Action) {
+export default function movieReducer(state: Movie[] = initialState, action: Action) {
     switch (action.type) {
         default:
             return state;
