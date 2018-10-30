@@ -8,6 +8,7 @@ import {AppRoutingModule} from '../app-routing.module';
 import {MovieDetailComponent} from '../movie-detail/movie-detail.component';
 import {APP_BASE_HREF} from '@angular/common';
 import {movieReducer, searchReducer, genreReducer} from '../reducers';
+import {Genre} from '../models/genre';
 
 describe('MovieListComponent', () => {
   let component: MovieListComponent;
@@ -22,7 +23,22 @@ describe('MovieListComponent', () => {
           movie: movieReducer,
           search: searchReducer,
           genre: genreReducer
-        })
+        },{
+            initialState: {
+              movie: [{
+                id: 23,
+                key: 'bad-boys',
+                name: 'Bad Boys',
+                description: 'Two hip detectives protect a murder witness while investigating a case of stolen heroin.',
+                genres: [Genre.action, Genre.comedy, Genre.crime],
+                rate: 6.8,
+                length: '1hr 59mins',
+                img: 'bad-boys.jpg'
+              }],
+              search: '',
+              genre: 'all'
+            }
+          })
       ],
       declarations: [ MovieListComponent, MovieSearchComponent, MovieDetailComponent],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }]
@@ -38,5 +54,9 @@ describe('MovieListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display one movie', () => {
+    expect(document.querySelectorAll('.movie').length).toEqual(1);
   });
 });
