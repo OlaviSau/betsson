@@ -23,7 +23,8 @@ describe('MovieListComponent', () => {
           movie: movieReducer,
           search: searchReducer,
           genre: genreReducer
-        },{
+        },
+          {
             initialState: {
               movie: [{
                 id: 23,
